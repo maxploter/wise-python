@@ -1,0 +1,6 @@
+{
+  "packageName": "wise_api_client",
+  "packageVersion": "0.0.1",
+  "library": "urllib3",
+  "useOneOfDiscriminatorLookup": true
+}
