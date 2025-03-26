@@ -17,6 +17,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      # GitHub Actions example
+      - uses: schemathesis/action@v1
+        with:
+          schema: "https://raw.githubusercontent.com/maxploter/wise-python/refs/heads/main/api/spec.yaml"
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
         with:
