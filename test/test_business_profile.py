@@ -36,7 +36,7 @@ class TestBusinessProfile(unittest.TestCase):
         if include_optional:
             return BusinessProfile(
                 id = 30000002,
-                type = 'business',
+                type = 'BUSINESS',
                 details = wise_api_client.models.business_profile_details.BusinessProfile_details(
                     name = 'ABC Logistics Ltd', 
                     registration_number = '12144939', 

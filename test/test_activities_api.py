@@ -26,8 +26,8 @@ class TestActivitiesApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_profiles_profile_id_activities_get(self) -> None:
-        """Test case for profiles_profile_id_activities_get
+    def test_v1_profiles_profile_id_activities_get(self) -> None:
+        """Test case for v1_profiles_profile_id_activities_get
 
         List activities for a profile
         """
