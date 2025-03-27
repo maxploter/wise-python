@@ -1,5 +1,4 @@
 .github/workflows/python.yml
-.gitignore
 .gitlab-ci.yml
 .travis.yml
 README.md
@@ -29,7 +28,6 @@ docs/CreateRecipientRequestDetails.md
 docs/CreateStandardTransferRequest.md
 docs/CreateThirdPartyTransferRequest.md
 docs/CreateUnauthenticatedQuoteRequest.md
-docs/DefaultApi.md
 docs/Director.md
 docs/Error.md
 docs/FeeConfiguration.md
@@ -49,12 +47,15 @@ docs/PersonalProfileDetails.md
 docs/PersonalProfileDetailsOccupationsInner.md
 docs/PriceDetails.md
 docs/PricingConfiguration.md
+docs/ProfilesApi.md
 docs/Quote.md
+docs/QuotesApi.md
 docs/Recipient.md
 docs/RecipientCommonFieldMap.md
 docs/RecipientDetails.md
 docs/RecipientDisplayFieldsInner.md
 docs/RecipientName.md
+docs/RecipientsApi.md
 docs/RequirementField.md
 docs/StandardTransfer.md
 docs/TotalPrice.md
@@ -62,6 +63,7 @@ docs/TransferDetails.md
 docs/TransferRequirementsRequest.md
 docs/TransferRequirementsResponseInner.md
 docs/TransferRequirementsResponseInnerFieldsInner.md
+docs/TransfersApi.md
 docs/UBO.md
 docs/UpdateQuoteRequest.md
 docs/UpdateQuoteRequestPaymentMetadata.md
@@ -86,7 +88,10 @@ tox.ini
 wise_api_client/__init__.py
 wise_api_client/api/__init__.py
 wise_api_client/api/activities_api.py
-wise_api_client/api/default_api.py
+wise_api_client/api/profiles_api.py
+wise_api_client/api/quotes_api.py
+wise_api_client/api/recipients_api.py
+wise_api_client/api/transfers_api.py
 wise_api_client/api_client.py
 wise_api_client/api_response.py
 wise_api_client/configuration.py

@@ -36,7 +36,7 @@ class TestPersonalProfile(unittest.TestCase):
         if include_optional:
             return PersonalProfile(
                 id = 30000001,
-                type = 'personal',
+                type = 'PERSONAL',
                 details = wise_api_client.models.personal_profile_details.PersonalProfile_details(
                     first_name = 'Oliver', 
                     last_name = 'Wilson', 

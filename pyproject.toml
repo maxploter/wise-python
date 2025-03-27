@@ -2,10 +2,10 @@
 name = "wise_api_client"
 version = "0.0.1"
 description = "Wise Platform API"
-authors = ["OpenAPI Generator Community <team@openapitools.org>"]
-license = "NoLicense"
+authors = ["Max Ploter <maksim.ploter@gmail.com>"]
+license = "MIT"
 readme = "README.md"
-repository = "https://github.com/GIT_USER_ID/GIT_REPO_ID"
+repository = "https://github.com/maxploter/wise-python"
 keywords = ["OpenAPI", "OpenAPI-Generator", "Wise Platform API"]
 include = ["wise_api_client/py.typed"]
 
