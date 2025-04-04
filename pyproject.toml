@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "wise_api_client"
-version = "0.0.1"
+version = "0.0.2"
 description = "Wise Platform API"
 authors = ["Max Ploter <maksim.ploter@gmail.com>"]
 license = "MIT"
