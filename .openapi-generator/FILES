@@ -18,6 +18,7 @@ docs/BankingPartnerInvoice.md
 docs/BusinessProfile.md
 docs/BusinessProfileDetails.md
 docs/CreateAuthenticatedQuoteRequest.md
+docs/CreateAuthenticatedQuoteRequestPaymentMetadata.md
 docs/CreateBusinessProfileRequest.md
 docs/CreatePartnerLicenceTransferRequest.md
 docs/CreatePersonalProfileRequest.md
@@ -112,6 +113,7 @@ wise_api_client/models/banking_partner_invoice.py
 wise_api_client/models/business_profile.py
 wise_api_client/models/business_profile_details.py
 wise_api_client/models/create_authenticated_quote_request.py
+wise_api_client/models/create_authenticated_quote_request_payment_metadata.py
 wise_api_client/models/create_business_profile_request.py
 wise_api_client/models/create_partner_licence_transfer_request.py
 wise_api_client/models/create_personal_profile_request.py

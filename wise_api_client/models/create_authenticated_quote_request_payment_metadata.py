@@ -18,24 +18,17 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional, Union
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class PaymentsListInner(BaseModel):
+class CreateAuthenticatedQuoteRequestPaymentMetadata(BaseModel):
     """
-    PaymentsListInner
+    CreateAuthenticatedQuoteRequestPaymentMetadata
     """ # noqa: E501
-    id: Optional[StrictInt] = None
-    method: Optional[StrictStr] = None
-    pricing_variant: Optional[StrictStr] = Field(default=None, alias="pricingVariant")
-    amount: Optional[Union[StrictFloat, StrictInt]] = None
-    currency: Optional[StrictStr] = None
-    time_created: Optional[datetime] = Field(default=None, alias="timeCreated")
-    time_updated: Optional[datetime] = Field(default=None, alias="timeUpdated")
-    __properties: ClassVar[List[str]] = ["id", "method", "pricingVariant", "amount", "currency", "timeCreated", "timeUpdated"]
+    transfer_nature: Optional[StrictStr] = Field(default=None, alias="transferNature")
+    __properties: ClassVar[List[str]] = ["transferNature"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -55,7 +48,7 @@ class PaymentsListInner(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of PaymentsListInner from a JSON string"""
+        """Create an instance of CreateAuthenticatedQuoteRequestPaymentMetadata from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -76,16 +69,11 @@ class PaymentsListInner(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if pricing_variant (nullable) is None
-        # and model_fields_set contains the field
-        if self.pricing_variant is None and "pricing_variant" in self.model_fields_set:
-            _dict['pricingVariant'] = None
-
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of PaymentsListInner from a dict"""
+        """Create an instance of CreateAuthenticatedQuoteRequestPaymentMetadata from a dict"""
         if obj is None:
             return None
 
@@ -93,13 +81,7 @@ class PaymentsListInner(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "method": obj.get("method"),
-            "pricingVariant": obj.get("pricingVariant"),
-            "amount": obj.get("amount"),
-            "currency": obj.get("currency"),
-            "timeCreated": obj.get("timeCreated"),
-            "timeUpdated": obj.get("timeUpdated")
+            "transferNature": obj.get("transferNature")
         })
         return _obj
 

@@ -4,14 +4,14 @@ All URIs are relative to *https://api.sandbox.transferwise.tech*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**profiles_profile_id_quotes_post**](QuotesApi.md#profiles_profile_id_quotes_post) | **POST** /profiles/{profileId}/quotes | Create an authenticated quote
-[**profiles_profile_id_quotes_quote_id_get**](QuotesApi.md#profiles_profile_id_quotes_quote_id_get) | **GET** /profiles/{profileId}/quotes/{quoteId} | Retrieve a quote by ID
-[**profiles_profile_id_quotes_quote_id_patch**](QuotesApi.md#profiles_profile_id_quotes_quote_id_patch) | **PATCH** /profiles/{profileId}/quotes/{quoteId} | Update a quote
-[**quotes_post**](QuotesApi.md#quotes_post) | **POST** /quotes | Create an unauthenticated quote
+[**v3_profiles_profile_id_quotes_post**](QuotesApi.md#v3_profiles_profile_id_quotes_post) | **POST** /v3/profiles/{profileId}/quotes | Create an authenticated quote
+[**v3_profiles_profile_id_quotes_quote_id_get**](QuotesApi.md#v3_profiles_profile_id_quotes_quote_id_get) | **GET** /v3/profiles/{profileId}/quotes/{quoteId} | Retrieve a quote by ID
+[**v3_profiles_profile_id_quotes_quote_id_patch**](QuotesApi.md#v3_profiles_profile_id_quotes_quote_id_patch) | **PATCH** /v3/profiles/{profileId}/quotes/{quoteId} | Update a quote
+[**v3_quotes_post**](QuotesApi.md#v3_quotes_post) | **POST** /v3/quotes | Create an unauthenticated quote
 
 
-# **profiles_profile_id_quotes_post**
-> Quote profiles_profile_id_quotes_post(profile_id, create_authenticated_quote_request)
+# **v3_profiles_profile_id_quotes_post**
+> Quote v3_profiles_profile_id_quotes_post(profile_id, create_authenticated_quote_request)
 
 Create an authenticated quote
 
@@ -53,11 +53,11 @@ with wise_api_client.ApiClient(configuration) as api_client:
 
     try:
         # Create an authenticated quote
-        api_response = api_instance.profiles_profile_id_quotes_post(profile_id, create_authenticated_quote_request)
-        print("The response of QuotesApi->profiles_profile_id_quotes_post:\n")
+        api_response = api_instance.v3_profiles_profile_id_quotes_post(profile_id, create_authenticated_quote_request)
+        print("The response of QuotesApi->v3_profiles_profile_id_quotes_post:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling QuotesApi->profiles_profile_id_quotes_post: %s\n" % e)
+        print("Exception when calling QuotesApi->v3_profiles_profile_id_quotes_post: %s\n" % e)
 ```
 
 
@@ -91,8 +91,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **profiles_profile_id_quotes_quote_id_get**
-> Quote profiles_profile_id_quotes_quote_id_get(profile_id, quote_id)
+# **v3_profiles_profile_id_quotes_quote_id_get**
+> Quote v3_profiles_profile_id_quotes_quote_id_get(profile_id, quote_id)
 
 Retrieve a quote by ID
 
@@ -133,11 +133,11 @@ with wise_api_client.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve a quote by ID
-        api_response = api_instance.profiles_profile_id_quotes_quote_id_get(profile_id, quote_id)
-        print("The response of QuotesApi->profiles_profile_id_quotes_quote_id_get:\n")
+        api_response = api_instance.v3_profiles_profile_id_quotes_quote_id_get(profile_id, quote_id)
+        print("The response of QuotesApi->v3_profiles_profile_id_quotes_quote_id_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling QuotesApi->profiles_profile_id_quotes_quote_id_get: %s\n" % e)
+        print("Exception when calling QuotesApi->v3_profiles_profile_id_quotes_quote_id_get: %s\n" % e)
 ```
 
 
@@ -171,8 +171,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **profiles_profile_id_quotes_quote_id_patch**
-> Quote profiles_profile_id_quotes_quote_id_patch(profile_id, quote_id, update_quote_request)
+# **v3_profiles_profile_id_quotes_quote_id_patch**
+> Quote v3_profiles_profile_id_quotes_quote_id_patch(profile_id, quote_id, update_quote_request)
 
 Update a quote
 
@@ -215,11 +215,11 @@ with wise_api_client.ApiClient(configuration) as api_client:
 
     try:
         # Update a quote
-        api_response = api_instance.profiles_profile_id_quotes_quote_id_patch(profile_id, quote_id, update_quote_request)
-        print("The response of QuotesApi->profiles_profile_id_quotes_quote_id_patch:\n")
+        api_response = api_instance.v3_profiles_profile_id_quotes_quote_id_patch(profile_id, quote_id, update_quote_request)
+        print("The response of QuotesApi->v3_profiles_profile_id_quotes_quote_id_patch:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling QuotesApi->profiles_profile_id_quotes_quote_id_patch: %s\n" % e)
+        print("Exception when calling QuotesApi->v3_profiles_profile_id_quotes_quote_id_patch: %s\n" % e)
 ```
 
 
@@ -254,8 +254,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **quotes_post**
-> Quote quotes_post(create_unauthenticated_quote_request)
+# **v3_quotes_post**
+> Quote v3_quotes_post(create_unauthenticated_quote_request)
 
 Create an unauthenticated quote
 
@@ -286,11 +286,11 @@ with wise_api_client.ApiClient(configuration) as api_client:
 
     try:
         # Create an unauthenticated quote
-        api_response = api_instance.quotes_post(create_unauthenticated_quote_request)
-        print("The response of QuotesApi->quotes_post:\n")
+        api_response = api_instance.v3_quotes_post(create_unauthenticated_quote_request)
+        print("The response of QuotesApi->v3_quotes_post:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling QuotesApi->quotes_post: %s\n" % e)
+        print("Exception when calling QuotesApi->v3_quotes_post: %s\n" % e)
 ```
 
 

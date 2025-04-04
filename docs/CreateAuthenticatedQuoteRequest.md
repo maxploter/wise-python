@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **source_amount** | **float** |  | [optional] 
 **target_amount** | **float** |  | [optional] 
 **target_account** | **int** |  | [optional] 
-**payment_metadata** | **object** |  | [optional] 
+**payment_metadata** | [**CreateAuthenticatedQuoteRequestPaymentMetadata**](CreateAuthenticatedQuoteRequestPaymentMetadata.md) |  | [optional] 
 **pricing_configuration** | [**PricingConfiguration**](PricingConfiguration.md) |  | [optional] 
 
 ## Example
