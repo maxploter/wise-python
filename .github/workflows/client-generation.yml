@@ -1,0 +1,42 @@
+name: Generate Python Client
+on:
+  pull_request:
+    paths:
+      - 'api/spec.yaml'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  client-generation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run OpenAPI Generator
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}/api:/local/api \
+            -v ${{ github.workspace }}:/local \
+            openapitools/openapi-generator-cli generate \
+            -i /local/api/spec.yaml \
+            -g python \
+            -o /local \
+            -c /local/api/config.json \
+            --git-user-id "maxploter" \
+            --git-repo-id "wise-python" \
+            --ignore-file-override /local/.openapi-generator-ignore
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .
+          git diff --staged --quiet || git commit -m "Auto-generate Python client from updated spec.yaml"
+          git push origin ${{ github.head_ref }}
