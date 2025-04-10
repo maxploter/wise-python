@@ -4,11 +4,11 @@ All URIs are relative to *https://api.sandbox.transferwise.tech*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1_profiles_profile_id_activities_get**](ActivitiesApi.md#v1_profiles_profile_id_activities_get) | **GET** /v1/profiles/{profileId}/activities | List activities for a profile
+[**list_activities**](ActivitiesApi.md#list_activities) | **GET** /v1/profiles/{profileId}/activities | List activities for a profile
 
 
-# **v1_profiles_profile_id_activities_get**
-> ActivitiesResponse v1_profiles_profile_id_activities_get(profile_id, monetary_resource_type=monetary_resource_type, status=status, since=since, until=until, next_cursor=next_cursor, size=size)
+# **list_activities**
+> ActivitiesResponse list_activities(profile_id, monetary_resource_type=monetary_resource_type, status=status, since=since, until=until, next_cursor=next_cursor, size=size)
 
 List activities for a profile
 
@@ -56,11 +56,11 @@ with wise_api_client.ApiClient(configuration) as api_client:
 
     try:
         # List activities for a profile
-        api_response = api_instance.v1_profiles_profile_id_activities_get(profile_id, monetary_resource_type=monetary_resource_type, status=status, since=since, until=until, next_cursor=next_cursor, size=size)
-        print("The response of ActivitiesApi->v1_profiles_profile_id_activities_get:\n")
+        api_response = api_instance.list_activities(profile_id, monetary_resource_type=monetary_resource_type, status=status, since=since, until=until, next_cursor=next_cursor, size=size)
+        print("The response of ActivitiesApi->list_activities:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ActivitiesApi->v1_profiles_profile_id_activities_get: %s\n" % e)
+        print("Exception when calling ActivitiesApi->list_activities: %s\n" % e)
 ```
 
 
