@@ -4,18 +4,174 @@ All URIs are relative to *https://api.sandbox.transferwise.tech*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**add_directors**](ProfilesApi.md#add_directors) | **POST** /v1/profiles/{profileId}/directors | Add directors
+[**check_verification_status**](ProfilesApi.md#check_verification_status) | **POST** /v3/profiles/{profileId}/verification-status/bank-transfer | Check verification status
 [**create_business_profile**](ProfilesApi.md#create_business_profile) | **POST** /v2/profiles/business-profile | Create a business profile
 [**create_personal_profile**](ProfilesApi.md#create_personal_profile) | **POST** /v2/profiles/personal-profile | Create a personal profile
-[**v1_profiles_profile_id_directors_get**](ProfilesApi.md#v1_profiles_profile_id_directors_get) | **GET** /v1/profiles/{profileId}/directors | List directors
-[**v1_profiles_profile_id_directors_post**](ProfilesApi.md#v1_profiles_profile_id_directors_post) | **POST** /v1/profiles/{profileId}/directors | Add directors
-[**v1_profiles_profile_id_directors_put**](ProfilesApi.md#v1_profiles_profile_id_directors_put) | **PUT** /v1/profiles/{profileId}/directors | Update directors
-[**v1_profiles_profile_id_verification_documents_post**](ProfilesApi.md#v1_profiles_profile_id_verification_documents_post) | **POST** /v1/profiles/{profileId}/verification-documents | Create identification document
-[**v2_profiles_get**](ProfilesApi.md#v2_profiles_get) | **GET** /v2/profiles | List profiles for a user account
-[**v2_profiles_profile_id_business_profile_put**](ProfilesApi.md#v2_profiles_profile_id_business_profile_put) | **PUT** /v2/profiles/{profileId}/business-profile | Update a business profile
-[**v2_profiles_profile_id_get**](ProfilesApi.md#v2_profiles_profile_id_get) | **GET** /v2/profiles/{profileId} | Retrieve a profile by ID
-[**v2_profiles_profile_id_personal_profile_put**](ProfilesApi.md#v2_profiles_profile_id_personal_profile_put) | **PUT** /v2/profiles/{profileId}/personal-profile | Update a personal profile
-[**v3_profiles_profile_id_verification_status_bank_transfer_post**](ProfilesApi.md#v3_profiles_profile_id_verification_status_bank_transfer_post) | **POST** /v3/profiles/{profileId}/verification-status/bank-transfer | Check verification status
+[**create_verification_document**](ProfilesApi.md#create_verification_document) | **POST** /v1/profiles/{profileId}/verification-documents | Create identification document
+[**get_profile_by_id**](ProfilesApi.md#get_profile_by_id) | **GET** /v2/profiles/{profileId} | Retrieve a profile by ID
+[**list_directors**](ProfilesApi.md#list_directors) | **GET** /v1/profiles/{profileId}/directors | List directors
+[**list_profiles**](ProfilesApi.md#list_profiles) | **GET** /v2/profiles | List profiles for a user account
+[**update_business_profile**](ProfilesApi.md#update_business_profile) | **PUT** /v2/profiles/{profileId}/business-profile | Update a business profile
+[**update_directors**](ProfilesApi.md#update_directors) | **PUT** /v1/profiles/{profileId}/directors | Update directors
+[**update_personal_profile**](ProfilesApi.md#update_personal_profile) | **PUT** /v2/profiles/{profileId}/personal-profile | Update a personal profile
 
+
+# **add_directors**
+> List[Director] add_directors(profile_id, director=director)
+
+Add directors
+
+### Example
+
+* Bearer Authentication (BearerAuth):
+
+```python
+import wise_api_client
+from wise_api_client.models.director import Director
+from wise_api_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.sandbox.transferwise.tech
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wise_api_client.Configuration(
+    host = "https://api.sandbox.transferwise.tech"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = wise_api_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with wise_api_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wise_api_client.ProfilesApi(api_client)
+    profile_id = 56 # int | 
+    director = [wise_api_client.Director()] # List[Director] |  (optional)
+
+    try:
+        # Add directors
+        api_response = api_instance.add_directors(profile_id, director=director)
+        print("The response of ProfilesApi->add_directors:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ProfilesApi->add_directors: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **profile_id** | **int**|  | 
+ **director** | [**List[Director]**](Director.md)|  | [optional] 
+
+### Return type
+
+[**List[Director]**](Director.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Directors added |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **check_verification_status**
+> VerificationStatusResponse check_verification_status(profile_id, source_currencies)
+
+Check verification status
+
+### Example
+
+* Bearer Authentication (BearerAuth):
+
+```python
+import wise_api_client
+from wise_api_client.models.verification_status_response import VerificationStatusResponse
+from wise_api_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.sandbox.transferwise.tech
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wise_api_client.Configuration(
+    host = "https://api.sandbox.transferwise.tech"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = wise_api_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with wise_api_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wise_api_client.ProfilesApi(api_client)
+    profile_id = 56 # int | 
+    source_currencies = ['source_currencies_example'] # List[str] | 
+
+    try:
+        # Check verification status
+        api_response = api_instance.check_verification_status(profile_id, source_currencies)
+        print("The response of ProfilesApi->check_verification_status:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ProfilesApi->check_verification_status: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **profile_id** | **int**|  | 
+ **source_currencies** | [**List[str]**](str.md)|  | 
+
+### Return type
+
+[**VerificationStatusResponse**](VerificationStatusResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Verification status |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_business_profile**
 > BusinessProfile create_business_profile(create_business_profile_request)
@@ -171,8 +327,163 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1_profiles_profile_id_directors_get**
-> List[Director] v1_profiles_profile_id_directors_get(profile_id)
+# **create_verification_document**
+> Error create_verification_document(profile_id, create_verification_document_request=create_verification_document_request)
+
+Create identification document
+
+### Example
+
+* Bearer Authentication (BearerAuth):
+
+```python
+import wise_api_client
+from wise_api_client.models.create_verification_document_request import CreateVerificationDocumentRequest
+from wise_api_client.models.error import Error
+from wise_api_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.sandbox.transferwise.tech
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wise_api_client.Configuration(
+    host = "https://api.sandbox.transferwise.tech"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = wise_api_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with wise_api_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wise_api_client.ProfilesApi(api_client)
+    profile_id = 56 # int | 
+    create_verification_document_request = wise_api_client.CreateVerificationDocumentRequest() # CreateVerificationDocumentRequest |  (optional)
+
+    try:
+        # Create identification document
+        api_response = api_instance.create_verification_document(profile_id, create_verification_document_request=create_verification_document_request)
+        print("The response of ProfilesApi->create_verification_document:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ProfilesApi->create_verification_document: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **profile_id** | **int**|  | 
+ **create_verification_document_request** | [**CreateVerificationDocumentRequest**](CreateVerificationDocumentRequest.md)|  | [optional] 
+
+### Return type
+
+[**Error**](Error.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Document created |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_profile_by_id**
+> GetProfileById200Response get_profile_by_id(profile_id)
+
+Retrieve a profile by ID
+
+### Example
+
+* Bearer Authentication (BearerAuth):
+
+```python
+import wise_api_client
+from wise_api_client.models.get_profile_by_id200_response import GetProfileById200Response
+from wise_api_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.sandbox.transferwise.tech
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wise_api_client.Configuration(
+    host = "https://api.sandbox.transferwise.tech"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = wise_api_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with wise_api_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wise_api_client.ProfilesApi(api_client)
+    profile_id = 56 # int | 
+
+    try:
+        # Retrieve a profile by ID
+        api_response = api_instance.get_profile_by_id(profile_id)
+        print("The response of ProfilesApi->get_profile_by_id:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ProfilesApi->get_profile_by_id: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **profile_id** | **int**|  | 
+
+### Return type
+
+[**GetProfileById200Response**](GetProfileById200Response.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Profile details |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_directors**
+> List[Director] list_directors(profile_id)
 
 List directors
 
@@ -210,11 +521,11 @@ with wise_api_client.ApiClient(configuration) as api_client:
 
     try:
         # List directors
-        api_response = api_instance.v1_profiles_profile_id_directors_get(profile_id)
-        print("The response of ProfilesApi->v1_profiles_profile_id_directors_get:\n")
+        api_response = api_instance.list_directors(profile_id)
+        print("The response of ProfilesApi->list_directors:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ProfilesApi->v1_profiles_profile_id_directors_get: %s\n" % e)
+        print("Exception when calling ProfilesApi->list_directors: %s\n" % e)
 ```
 
 
@@ -247,10 +558,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1_profiles_profile_id_directors_post**
-> List[Director] v1_profiles_profile_id_directors_post(profile_id, director=director)
+# **list_profiles**
+> List[ListProfiles200ResponseInner] list_profiles()
 
-Add directors
+List profiles for a user account
 
 ### Example
 
@@ -258,7 +569,80 @@ Add directors
 
 ```python
 import wise_api_client
-from wise_api_client.models.director import Director
+from wise_api_client.models.list_profiles200_response_inner import ListProfiles200ResponseInner
+from wise_api_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.sandbox.transferwise.tech
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wise_api_client.Configuration(
+    host = "https://api.sandbox.transferwise.tech"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = wise_api_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with wise_api_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wise_api_client.ProfilesApi(api_client)
+
+    try:
+        # List profiles for a user account
+        api_response = api_instance.list_profiles()
+        print("The response of ProfilesApi->list_profiles:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ProfilesApi->list_profiles: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List[ListProfiles200ResponseInner]**](ListProfiles200ResponseInner.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of profiles |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_business_profile**
+> BusinessProfile update_business_profile(profile_id, update_business_profile_request)
+
+Update a business profile
+
+### Example
+
+* Bearer Authentication (BearerAuth):
+
+```python
+import wise_api_client
+from wise_api_client.models.business_profile import BusinessProfile
+from wise_api_client.models.update_business_profile_request import UpdateBusinessProfileRequest
 from wise_api_client.rest import ApiException
 from pprint import pprint
 
@@ -283,15 +667,15 @@ with wise_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wise_api_client.ProfilesApi(api_client)
     profile_id = 56 # int | 
-    director = [wise_api_client.Director()] # List[Director] |  (optional)
+    update_business_profile_request = wise_api_client.UpdateBusinessProfileRequest() # UpdateBusinessProfileRequest | 
 
     try:
-        # Add directors
-        api_response = api_instance.v1_profiles_profile_id_directors_post(profile_id, director=director)
-        print("The response of ProfilesApi->v1_profiles_profile_id_directors_post:\n")
+        # Update a business profile
+        api_response = api_instance.update_business_profile(profile_id, update_business_profile_request)
+        print("The response of ProfilesApi->update_business_profile:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ProfilesApi->v1_profiles_profile_id_directors_post: %s\n" % e)
+        print("Exception when calling ProfilesApi->update_business_profile: %s\n" % e)
 ```
 
 
@@ -302,11 +686,11 @@ with wise_api_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **profile_id** | **int**|  | 
- **director** | [**List[Director]**](Director.md)|  | [optional] 
+ **update_business_profile_request** | [**UpdateBusinessProfileRequest**](UpdateBusinessProfileRequest.md)|  | 
 
 ### Return type
 
-[**List[Director]**](Director.md)
+[**BusinessProfile**](BusinessProfile.md)
 
 ### Authorization
 
@@ -321,12 +705,12 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Directors added |  -  |
+**200** | Business profile updated |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1_profiles_profile_id_directors_put**
-> List[Director] v1_profiles_profile_id_directors_put(profile_id, director=director)
+# **update_directors**
+> List[Director] update_directors(profile_id, director=director)
 
 Update directors
 
@@ -365,11 +749,11 @@ with wise_api_client.ApiClient(configuration) as api_client:
 
     try:
         # Update directors
-        api_response = api_instance.v1_profiles_profile_id_directors_put(profile_id, director=director)
-        print("The response of ProfilesApi->v1_profiles_profile_id_directors_put:\n")
+        api_response = api_instance.update_directors(profile_id, director=director)
+        print("The response of ProfilesApi->update_directors:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ProfilesApi->v1_profiles_profile_id_directors_put: %s\n" % e)
+        print("Exception when calling ProfilesApi->update_directors: %s\n" % e)
 ```
 
 
@@ -403,314 +787,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1_profiles_profile_id_verification_documents_post**
-> Error v1_profiles_profile_id_verification_documents_post(profile_id, v1_profiles_profile_id_verification_documents_post_request=v1_profiles_profile_id_verification_documents_post_request)
-
-Create identification document
-
-### Example
-
-* Bearer Authentication (BearerAuth):
-
-```python
-import wise_api_client
-from wise_api_client.models.error import Error
-from wise_api_client.models.v1_profiles_profile_id_verification_documents_post_request import V1ProfilesProfileIdVerificationDocumentsPostRequest
-from wise_api_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.sandbox.transferwise.tech
-# See configuration.py for a list of all supported configuration parameters.
-configuration = wise_api_client.Configuration(
-    host = "https://api.sandbox.transferwise.tech"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: BearerAuth
-configuration = wise_api_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with wise_api_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = wise_api_client.ProfilesApi(api_client)
-    profile_id = 56 # int | 
-    v1_profiles_profile_id_verification_documents_post_request = wise_api_client.V1ProfilesProfileIdVerificationDocumentsPostRequest() # V1ProfilesProfileIdVerificationDocumentsPostRequest |  (optional)
-
-    try:
-        # Create identification document
-        api_response = api_instance.v1_profiles_profile_id_verification_documents_post(profile_id, v1_profiles_profile_id_verification_documents_post_request=v1_profiles_profile_id_verification_documents_post_request)
-        print("The response of ProfilesApi->v1_profiles_profile_id_verification_documents_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ProfilesApi->v1_profiles_profile_id_verification_documents_post: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **profile_id** | **int**|  | 
- **v1_profiles_profile_id_verification_documents_post_request** | [**V1ProfilesProfileIdVerificationDocumentsPostRequest**](V1ProfilesProfileIdVerificationDocumentsPostRequest.md)|  | [optional] 
-
-### Return type
-
-[**Error**](Error.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Document created |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v2_profiles_get**
-> List[V2ProfilesGet200ResponseInner] v2_profiles_get()
-
-List profiles for a user account
-
-### Example
-
-* Bearer Authentication (BearerAuth):
-
-```python
-import wise_api_client
-from wise_api_client.models.v2_profiles_get200_response_inner import V2ProfilesGet200ResponseInner
-from wise_api_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.sandbox.transferwise.tech
-# See configuration.py for a list of all supported configuration parameters.
-configuration = wise_api_client.Configuration(
-    host = "https://api.sandbox.transferwise.tech"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: BearerAuth
-configuration = wise_api_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with wise_api_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = wise_api_client.ProfilesApi(api_client)
-
-    try:
-        # List profiles for a user account
-        api_response = api_instance.v2_profiles_get()
-        print("The response of ProfilesApi->v2_profiles_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ProfilesApi->v2_profiles_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**List[V2ProfilesGet200ResponseInner]**](V2ProfilesGet200ResponseInner.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | List of profiles |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v2_profiles_profile_id_business_profile_put**
-> BusinessProfile v2_profiles_profile_id_business_profile_put(profile_id, v2_profiles_profile_id_business_profile_put_request)
-
-Update a business profile
-
-### Example
-
-* Bearer Authentication (BearerAuth):
-
-```python
-import wise_api_client
-from wise_api_client.models.business_profile import BusinessProfile
-from wise_api_client.models.v2_profiles_profile_id_business_profile_put_request import V2ProfilesProfileIdBusinessProfilePutRequest
-from wise_api_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.sandbox.transferwise.tech
-# See configuration.py for a list of all supported configuration parameters.
-configuration = wise_api_client.Configuration(
-    host = "https://api.sandbox.transferwise.tech"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: BearerAuth
-configuration = wise_api_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with wise_api_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = wise_api_client.ProfilesApi(api_client)
-    profile_id = 56 # int | 
-    v2_profiles_profile_id_business_profile_put_request = wise_api_client.V2ProfilesProfileIdBusinessProfilePutRequest() # V2ProfilesProfileIdBusinessProfilePutRequest | 
-
-    try:
-        # Update a business profile
-        api_response = api_instance.v2_profiles_profile_id_business_profile_put(profile_id, v2_profiles_profile_id_business_profile_put_request)
-        print("The response of ProfilesApi->v2_profiles_profile_id_business_profile_put:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ProfilesApi->v2_profiles_profile_id_business_profile_put: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **profile_id** | **int**|  | 
- **v2_profiles_profile_id_business_profile_put_request** | [**V2ProfilesProfileIdBusinessProfilePutRequest**](V2ProfilesProfileIdBusinessProfilePutRequest.md)|  | 
-
-### Return type
-
-[**BusinessProfile**](BusinessProfile.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Business profile updated |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v2_profiles_profile_id_get**
-> V2ProfilesProfileIdGet200Response v2_profiles_profile_id_get(profile_id)
-
-Retrieve a profile by ID
-
-### Example
-
-* Bearer Authentication (BearerAuth):
-
-```python
-import wise_api_client
-from wise_api_client.models.v2_profiles_profile_id_get200_response import V2ProfilesProfileIdGet200Response
-from wise_api_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.sandbox.transferwise.tech
-# See configuration.py for a list of all supported configuration parameters.
-configuration = wise_api_client.Configuration(
-    host = "https://api.sandbox.transferwise.tech"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: BearerAuth
-configuration = wise_api_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with wise_api_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = wise_api_client.ProfilesApi(api_client)
-    profile_id = 56 # int | 
-
-    try:
-        # Retrieve a profile by ID
-        api_response = api_instance.v2_profiles_profile_id_get(profile_id)
-        print("The response of ProfilesApi->v2_profiles_profile_id_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ProfilesApi->v2_profiles_profile_id_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **profile_id** | **int**|  | 
-
-### Return type
-
-[**V2ProfilesProfileIdGet200Response**](V2ProfilesProfileIdGet200Response.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Profile details |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v2_profiles_profile_id_personal_profile_put**
-> PersonalProfile v2_profiles_profile_id_personal_profile_put(profile_id, v2_profiles_profile_id_personal_profile_put_request)
+# **update_personal_profile**
+> PersonalProfile update_personal_profile(profile_id, update_personal_profile_request)
 
 Update a personal profile
 
@@ -721,7 +799,7 @@ Update a personal profile
 ```python
 import wise_api_client
 from wise_api_client.models.personal_profile import PersonalProfile
-from wise_api_client.models.v2_profiles_profile_id_personal_profile_put_request import V2ProfilesProfileIdPersonalProfilePutRequest
+from wise_api_client.models.update_personal_profile_request import UpdatePersonalProfileRequest
 from wise_api_client.rest import ApiException
 from pprint import pprint
 
@@ -746,15 +824,15 @@ with wise_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wise_api_client.ProfilesApi(api_client)
     profile_id = 56 # int | 
-    v2_profiles_profile_id_personal_profile_put_request = wise_api_client.V2ProfilesProfileIdPersonalProfilePutRequest() # V2ProfilesProfileIdPersonalProfilePutRequest | 
+    update_personal_profile_request = wise_api_client.UpdatePersonalProfileRequest() # UpdatePersonalProfileRequest | 
 
     try:
         # Update a personal profile
-        api_response = api_instance.v2_profiles_profile_id_personal_profile_put(profile_id, v2_profiles_profile_id_personal_profile_put_request)
-        print("The response of ProfilesApi->v2_profiles_profile_id_personal_profile_put:\n")
+        api_response = api_instance.update_personal_profile(profile_id, update_personal_profile_request)
+        print("The response of ProfilesApi->update_personal_profile:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ProfilesApi->v2_profiles_profile_id_personal_profile_put: %s\n" % e)
+        print("Exception when calling ProfilesApi->update_personal_profile: %s\n" % e)
 ```
 
 
@@ -765,7 +843,7 @@ with wise_api_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **profile_id** | **int**|  | 
- **v2_profiles_profile_id_personal_profile_put_request** | [**V2ProfilesProfileIdPersonalProfilePutRequest**](V2ProfilesProfileIdPersonalProfilePutRequest.md)|  | 
+ **update_personal_profile_request** | [**UpdatePersonalProfileRequest**](UpdatePersonalProfileRequest.md)|  | 
 
 ### Return type
 
@@ -785,84 +863,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Personal profile updated |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v3_profiles_profile_id_verification_status_bank_transfer_post**
-> VerificationStatusResponse v3_profiles_profile_id_verification_status_bank_transfer_post(profile_id, source_currencies)
-
-Check verification status
-
-### Example
-
-* Bearer Authentication (BearerAuth):
-
-```python
-import wise_api_client
-from wise_api_client.models.verification_status_response import VerificationStatusResponse
-from wise_api_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.sandbox.transferwise.tech
-# See configuration.py for a list of all supported configuration parameters.
-configuration = wise_api_client.Configuration(
-    host = "https://api.sandbox.transferwise.tech"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: BearerAuth
-configuration = wise_api_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with wise_api_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = wise_api_client.ProfilesApi(api_client)
-    profile_id = 56 # int | 
-    source_currencies = ['source_currencies_example'] # List[str] | 
-
-    try:
-        # Check verification status
-        api_response = api_instance.v3_profiles_profile_id_verification_status_bank_transfer_post(profile_id, source_currencies)
-        print("The response of ProfilesApi->v3_profiles_profile_id_verification_status_bank_transfer_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ProfilesApi->v3_profiles_profile_id_verification_status_bank_transfer_post: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **profile_id** | **int**|  | 
- **source_currencies** | [**List[str]**](str.md)|  | 
-
-### Return type
-
-[**VerificationStatusResponse**](VerificationStatusResponse.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Verification status |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
