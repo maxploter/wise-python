@@ -1,16 +1,16 @@
 # CreateRecipientRequest
 
+Beyond the fixed fields, this object accepts a dynamic set of properties based on the response from the `/v1/quotes/{quoteId}/account-requirements` endpoint. This can include simple fields or nested objects like 'details' and 'address' when required for a specific currency route.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**currency** | **str** |  | 
-**type** | **str** |  | 
-**profile** | **int** |  | 
-**account_holder_name** | **str** |  | 
-**owned_by_customer** | **bool** |  | [optional] 
-**details** | [**CreateRecipientRequestDetails**](CreateRecipientRequestDetails.md) |  | 
+**currency** | **str** | 3 character currency code for the recipient&#39;s account. | 
+**type** | **str** | The type of recipient account, determined from the account requirements. | 
+**profile** | **int** | The profile ID that the recipient will be created under. | 
+**account_holder_name** | **str** | The recipient&#39;s full name. | 
+**owned_by_customer** | **bool** | Whether this account is owned by the sending user. | [optional] 
 
 ## Example
 

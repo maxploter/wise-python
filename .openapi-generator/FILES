@@ -25,7 +25,6 @@ docs/CreatePersonalProfileRequest.md
 docs/CreatePersonalProfileRequestAddress.md
 docs/CreatePersonalProfileRequestContactDetails.md
 docs/CreateRecipientRequest.md
-docs/CreateRecipientRequestDetails.md
 docs/CreateRefundRecipientAccountRequest.md
 docs/CreateRefundRecipientAccountRequestName.md
 docs/CreateStandardTransferRequest.md
@@ -120,7 +119,6 @@ wise_api_client/models/create_personal_profile_request.py
 wise_api_client/models/create_personal_profile_request_address.py
 wise_api_client/models/create_personal_profile_request_contact_details.py
 wise_api_client/models/create_recipient_request.py
-wise_api_client/models/create_recipient_request_details.py
 wise_api_client/models/create_refund_recipient_account_request.py
 wise_api_client/models/create_refund_recipient_account_request_name.py
 wise_api_client/models/create_standard_transfer_request.py
