@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **source_currency** | **str** | ISO 4217 three-letter currency code | 
 **target_currency** | **str** | ISO 4217 three-letter currency code | 
 **target_account** | **int** | The ID of the recipient&#39;s account. This ID must exist in the system. | [optional] 
-**payment_metadata** | **object** |  | [optional] 
+**payment_metadata** | [**CreateAuthenticatedQuoteRequestBasePaymentMetadata**](CreateAuthenticatedQuoteRequestBasePaymentMetadata.md) |  | [optional] 
 **pricing_configuration** | [**PricingConfiguration**](PricingConfiguration.md) |  | [optional] 
 **source_amount** | **float** | The amount in the source currency. Must be greater than 0. | 
 **target_amount** | **float** | The amount in the target currency. Must be greater than 0. | 
