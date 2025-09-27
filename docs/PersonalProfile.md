@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** | A unique profile identifier | [optional] 
 **type** | **str** |  | [optional] 
 **details** | [**PersonalProfileDetails**](PersonalProfileDetails.md) |  | [optional] 
 

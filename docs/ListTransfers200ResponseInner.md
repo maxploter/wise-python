@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | 
+**id** | **int** | A unique transfer identifier | 
 **user** | **int** |  | 
 **target_account** | **int** |  | 
 **source_account** | **int** |  | [optional] 
@@ -19,9 +19,9 @@ Name | Type | Description | Notes
 **transfer_request** | **int** |  | [optional] 
 **details** | [**TransferDetails**](TransferDetails.md) |  | 
 **has_active_issues** | **bool** |  | [optional] 
-**source_currency** | **str** |  | 
+**source_currency** | **str** | ISO 4217 three-letter currency code | 
 **source_value** | **float** |  | 
-**target_currency** | **str** |  | 
+**target_currency** | **str** | ISO 4217 three-letter currency code | 
 **target_value** | **float** |  | 
 **customer_transaction_id** | **str** |  | [optional] 
 **originator** | [**Originator**](Originator.md) |  | 

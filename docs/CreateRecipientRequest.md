@@ -6,9 +6,9 @@ Beyond the fixed fields, this object accepts a dynamic set of properties based o
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**currency** | **str** | 3 character currency code for the recipient&#39;s account. | 
+**currency** | **str** | ISO 4217 three-letter currency code | 
 **type** | **str** | The type of recipient account, determined from the account requirements. | 
-**profile** | **int** | The profile ID that the recipient will be created under. | 
+**profile** | **int** | A unique profile identifier | 
 **account_holder_name** | **str** | The recipient&#39;s full name. | 
 **owned_by_customer** | **bool** | Whether this account is owned by the sending user. | [optional] 
 
