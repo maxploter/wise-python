@@ -6,10 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
-**creator_id** | **int** |  | [optional] 
-**profile_id** | **int** |  | [optional] 
+**creator_id** | **int** | A unique user identifier | [optional] 
+**profile_id** | **int** | A unique profile identifier | [optional] 
 **name** | [**RecipientName**](RecipientName.md) |  | [optional] 
-**currency** | **str** |  | [optional] 
+**currency** | **str** | ISO 4217 three-letter currency code | [optional] 
 **country** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
 **legal_entity_type** | **str** |  | [optional] 

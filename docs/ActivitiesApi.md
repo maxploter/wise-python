@@ -46,7 +46,7 @@ configuration = wise_api_client.Configuration(
 with wise_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wise_api_client.ActivitiesApi(api_client)
-    profile_id = 'profile_id_example' # str | ID of the user profile
+    profile_id = 56 # int | 
     monetary_resource_type = wise_api_client.ActivityResourceType() # ActivityResourceType | Filter by resource type (optional)
     status = wise_api_client.ActivityStatus() # ActivityStatus | Filter by activity status (optional)
     since = '2013-10-20T19:20:30+01:00' # datetime | Filter activities created after this timestamp (optional)
@@ -70,7 +70,7 @@ with wise_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **profile_id** | **str**| ID of the user profile | 
+ **profile_id** | **int**|  | 
  **monetary_resource_type** | [**ActivityResourceType**](.md)| Filter by resource type | [optional] 
  **status** | [**ActivityStatus**](.md)| Filter by activity status | [optional] 
  **since** | **datetime**| Filter activities created after this timestamp | [optional] 

@@ -5,15 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | GUID format quote ID | [optional] 
-**source_currency** | **str** |  | [optional] 
-**target_currency** | **str** |  | [optional] 
+**id** | **str** | A unique quote identifier in GUID format | [optional] 
+**source_currency** | **str** | ISO 4217 three-letter currency code | [optional] 
+**target_currency** | **str** | ISO 4217 three-letter currency code | [optional] 
 **source_amount** | **float** |  | [optional] 
 **target_amount** | **float** |  | [optional] 
 **pay_out** | **str** |  | [optional] 
 **rate** | **float** |  | [optional] 
 **created_time** | **datetime** |  | [optional] 
-**profile** | **int** |  | [optional] 
+**profile** | **int** | A unique profile identifier | [optional] 
 **rate_type** | **str** |  | [optional] 
 **rate_expiration_time** | **datetime** |  | [optional] 
 **provided_amount_type** | **str** |  | [optional] 

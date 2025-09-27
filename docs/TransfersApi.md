@@ -208,7 +208,7 @@ configuration = wise_api_client.Configuration(
 with wise_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wise_api_client.TransfersApi(api_client)
-    profile_id = 'profile_id_example' # str | 
+    profile_id = 56 # int | 
     create_partner_licence_transfer_request = wise_api_client.CreatePartnerLicenceTransferRequest() # CreatePartnerLicenceTransferRequest | 
 
     try:
@@ -227,7 +227,7 @@ with wise_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **profile_id** | **str**|  | 
+ **profile_id** | **int**|  | 
  **create_partner_licence_transfer_request** | [**CreatePartnerLicenceTransferRequest**](CreatePartnerLicenceTransferRequest.md)|  | 
 
 ### Return type
@@ -287,7 +287,7 @@ configuration = wise_api_client.Configuration(
 with wise_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wise_api_client.TransfersApi(api_client)
-    profile_id = 'profile_id_example' # str | 
+    profile_id = 56 # int | 
     create_third_party_transfer_request = wise_api_client.CreateThirdPartyTransferRequest() # CreateThirdPartyTransferRequest | 
 
     try:
@@ -306,7 +306,7 @@ with wise_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **profile_id** | **str**|  | 
+ **profile_id** | **int**|  | 
  **create_third_party_transfer_request** | [**CreateThirdPartyTransferRequest**](CreateThirdPartyTransferRequest.md)|  | 
 
 ### Return type
@@ -443,7 +443,7 @@ configuration = wise_api_client.Configuration(
 with wise_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wise_api_client.TransfersApi(api_client)
-    profile_id = 'profile_id_example' # str | 
+    profile_id = 56 # int | 
     transfer_id = 56 # int | 
     payment_request = wise_api_client.PaymentRequest() # PaymentRequest | 
 
@@ -463,7 +463,7 @@ with wise_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **profile_id** | **str**|  | 
+ **profile_id** | **int**|  | 
  **transfer_id** | **int**|  | 
  **payment_request** | [**PaymentRequest**](PaymentRequest.md)|  | 
 
@@ -674,7 +674,7 @@ configuration = wise_api_client.Configuration(
 with wise_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wise_api_client.TransfersApi(api_client)
-    profile_id = 'profile_id_example' # str | 
+    profile_id = 56 # int | 
     transfer_id = 56 # int | 
 
     try:
@@ -693,7 +693,7 @@ with wise_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **profile_id** | **str**|  | 
+ **profile_id** | **int**|  | 
  **transfer_id** | **int**|  | 
 
 ### Return type

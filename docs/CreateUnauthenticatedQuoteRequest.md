@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**source_currency** | **str** |  | 
-**target_currency** | **str** |  | 
-**source_amount** | **float** |  | [optional] 
-**target_amount** | **float** |  | [optional] 
+**source_currency** | **str** | ISO 4217 three-letter currency code | 
+**target_currency** | **str** | ISO 4217 three-letter currency code | 
 **pricing_configuration** | [**PricingConfiguration**](PricingConfiguration.md) |  | [optional] 
+**source_amount** | **float** | The amount in the source currency. Must be greater than 0. | 
+**target_amount** | **float** | The amount in the target currency. Must be greater than 0. | 
 
 ## Example
 
