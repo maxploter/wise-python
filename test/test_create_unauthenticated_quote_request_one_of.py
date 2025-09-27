@@ -15,10 +15,10 @@
 
 import unittest
 
-from wise_api_client.models.recipient_display_fields_inner import RecipientDisplayFieldsInner
+from wise_api_client.models.create_unauthenticated_quote_request_one_of import CreateUnauthenticatedQuoteRequestOneOf
 
-class TestRecipientDisplayFieldsInner(unittest.TestCase):
-    """RecipientDisplayFieldsInner unit test stubs"""
+class TestCreateUnauthenticatedQuoteRequestOneOf(unittest.TestCase):
+    """CreateUnauthenticatedQuoteRequestOneOf unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,27 +26,26 @@ class TestRecipientDisplayFieldsInner(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> RecipientDisplayFieldsInner:
-        """Test RecipientDisplayFieldsInner
+    def make_instance(self, include_optional) -> CreateUnauthenticatedQuoteRequestOneOf:
+        """Test CreateUnauthenticatedQuoteRequestOneOf
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `RecipientDisplayFieldsInner`
+        # uncomment below to create an instance of `CreateUnauthenticatedQuoteRequestOneOf`
         """
-        model = RecipientDisplayFieldsInner()
+        model = CreateUnauthenticatedQuoteRequestOneOf()
         if include_optional:
-            return RecipientDisplayFieldsInner(
-                key = '',
-                label = '',
-                value = ''
+            return CreateUnauthenticatedQuoteRequestOneOf(
+                source_amount = 1.337
             )
         else:
-            return RecipientDisplayFieldsInner(
+            return CreateUnauthenticatedQuoteRequestOneOf(
+                source_amount = 1.337,
         )
         """
 
-    def testRecipientDisplayFieldsInner(self):
-        """Test RecipientDisplayFieldsInner"""
+    def testCreateUnauthenticatedQuoteRequestOneOf(self):
+        """Test CreateUnauthenticatedQuoteRequestOneOf"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
