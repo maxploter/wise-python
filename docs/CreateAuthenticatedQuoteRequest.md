@@ -7,8 +7,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **source_currency** | **str** | ISO 4217 three-letter currency code | 
 **target_currency** | **str** | ISO 4217 three-letter currency code | 
-**target_account** | **int** | The ID of the recipient&#39;s account. This ID must exist in the system. | [optional] 
-**payment_metadata** | [**CreateAuthenticatedQuoteRequestBasePaymentMetadata**](CreateAuthenticatedQuoteRequestBasePaymentMetadata.md) |  | [optional] 
+**target_account** | **int** | A unique recipient account identifier | [optional] 
+**pay_out** | **str** | Optional. Preferred payout method. Default value is BANK_TRANSFER. Common values include BANK_TRANSFER, BALANCE, SWIFT, SWIFT_OUR, INTERAC, but other values may be supported. | [optional] 
+**preferred_pay_in** | **str** | Optional. Preferred payin method. Use BANK_TRANSFER to return this method at the top of the response&#39;s results. Common values include BANK_TRANSFER, BALANCE, SWIFT, SWIFT_OUR, INTERAC, but other values may be supported. | [optional] 
+**payment_metadata** | [**PaymentMetadata**](PaymentMetadata.md) |  | [optional] 
 **pricing_configuration** | [**PricingConfiguration**](PricingConfiguration.md) |  | [optional] 
 **source_amount** | **float** | The amount in the source currency. Must be greater than 0. | 
 **target_amount** | **float** | The amount in the target currency. Must be greater than 0. | 
