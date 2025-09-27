@@ -83,8 +83,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_create_unauthenticated_quote_request_one_of.py
-test/test_create_unauthenticated_quote_request_one_of1.py
 tox.ini
 wise_api_client/__init__.py
 wise_api_client/api/__init__.py
