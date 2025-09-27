@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **target_currency** | **str** | ISO 4217 three-letter currency code | [optional] 
 **source_amount** | **float** |  | [optional] 
 **target_amount** | **float** |  | [optional] 
-**pay_out** | **str** |  | [optional] 
+**pay_out** | **str** | The payout method for this quote. Common values include BANK_TRANSFER, BALANCE, SWIFT, SWIFT_OUR, INTERAC, but other values may be supported. | [optional] 
 **rate** | **float** |  | [optional] 
 **created_time** | **datetime** |  | [optional] 
 **profile** | **int** | A unique profile identifier | [optional] 

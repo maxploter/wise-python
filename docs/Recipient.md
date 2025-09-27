@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** | A unique recipient account identifier | [optional] 
 **creator_id** | **int** | A unique user identifier | [optional] 
 **profile_id** | **int** | A unique profile identifier | [optional] 
 **name** | [**RecipientName**](RecipientName.md) |  | [optional] 

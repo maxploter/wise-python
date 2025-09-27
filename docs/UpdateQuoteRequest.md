@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **target_account** | **int** |  | [optional] 
 **pay_out** | **str** |  | [optional] 
-**payment_metadata** | [**UpdateQuoteRequestPaymentMetadata**](UpdateQuoteRequestPaymentMetadata.md) |  | [optional] 
+**payment_metadata** | [**PaymentMetadata**](PaymentMetadata.md) |  | [optional] 
 **pricing_configuration** | [**PricingConfiguration**](PricingConfiguration.md) |  | [optional] 
 
 ## Example
