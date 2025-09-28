@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**legal_entity_type** | **str** |  | 
+**legal_entity_type** | **str** | The legal entity type of the originator. Common values are PRIVATE for individuals and BUSINESS for companies. This list may be extended by the API provider. | 
 **reference** | **str** |  | 
 **name** | [**OriginatorName**](OriginatorName.md) |  | [optional] 
 **date_of_birth** | **date** |  | [optional] 

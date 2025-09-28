@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str** |  | [optional] 
-**status** | **str** |  | [optional] 
+**status** | **str** | The status of the payment. Common values include COMPLETED and REJECTED. This list may be extended by the API provider. | [optional] 
 **error_code** | **str** |  | [optional] 
 
 ## Example

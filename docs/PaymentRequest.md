@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
+**type** | **str** | The payment method type. Common values include BALANCE and TRUSTED_PRE_FUND_BULK. This list may be extended by the API provider. | 
 **partner_reference** | **str** |  | [optional] 
 
 ## Example

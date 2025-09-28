@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
+**type** | **str** | Common values include  DRIVERS_LICENCE, IDENTITY_CARD. This list may be extended by the API provider. | 
 **unique_identifier** | **str** |  | 
 
 ## Example

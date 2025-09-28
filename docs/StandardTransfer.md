@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **target_account** | **int** |  | 
 **source_account** | **int** |  | [optional] 
 **quote** | **int** |  | [optional] 
-**quote_uuid** | **str** |  | 
-**status** | **str** |  | 
+**quote_uuid** | **str** | A unique quote identifier in GUID format | 
+**status** | **str** | The current status of the transfer. Common values include pending, processing, funded, cancelled, outgoing_payment_sent, funds_refunded. This list may be extended by the API provider. | 
 **reference** | **str** |  | [optional] 
 **rate** | **float** |  | 
 **created** | **datetime** |  | 

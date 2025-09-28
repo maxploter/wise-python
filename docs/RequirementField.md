@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **key** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
-**type** | **str** |  | [optional] 
+**type** | **str** | The type of the field. Common values include text and select. This list may be extended by the API provider. | [optional] 
 **refresh_requirements_on_change** | **bool** |  | [optional] 
 **required** | **bool** |  | [optional] 
 **display_format** | **str** |  | [optional] 

@@ -88,12 +88,16 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successfully created authenticated quote |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Quote not found |  -  |
-**422** | Unprocessable Entity |  -  |
-**500** | Internal Server Error |  -  |
+**400** | Bad request. Request message data did not pass validation. |  -  |
+**401** | Unauthorised. Not authorised to access requested data. |  -  |
+**403** | Forbidden. Access to requested data is forbidden. |  -  |
+**404** | Not Found. Requested resource does not exist. |  -  |
+**408** | Timeout. Operation timed out. |  -  |
+**422** | Unprocessable entity. Request message data did not pass validation. |  -  |
+**429** | Too Many Requests |  -  |
+**500** | Server error. |  -  |
+**4XX** | Client Error - Bad request, unauthorized, forbidden, not found, or validation error |  -  |
+**5XX** | Server Error - Internal server error or service unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -163,12 +167,16 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successfully created unauthenticated quote |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Quote not found |  -  |
-**422** | Unprocessable Entity |  -  |
-**500** | Internal Server Error |  -  |
+**400** | Bad request. Request message data did not pass validation. |  -  |
+**401** | Unauthorised. Not authorised to access requested data. |  -  |
+**403** | Forbidden. Access to requested data is forbidden. |  -  |
+**404** | Not Found. Requested resource does not exist. |  -  |
+**408** | Timeout. Operation timed out. |  -  |
+**422** | Unprocessable entity. Request message data did not pass validation. |  -  |
+**429** | Too Many Requests |  -  |
+**500** | Server error. |  -  |
+**4XX** | Client Error - Bad request, unauthorized, forbidden, not found, or validation error |  -  |
+**5XX** | Server Error - Internal server error or service unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -249,12 +257,16 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successfully retrieved quote |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Quote not found |  -  |
-**422** | Unprocessable Entity |  -  |
-**500** | Internal Server Error |  -  |
+**400** | Bad request. Request message data did not pass validation. |  -  |
+**401** | Unauthorised. Not authorised to access requested data. |  -  |
+**403** | Forbidden. Access to requested data is forbidden. |  -  |
+**404** | Not Found. Requested resource does not exist. |  -  |
+**408** | Timeout. Operation timed out. |  -  |
+**422** | Unprocessable entity. Request message data did not pass validation. |  -  |
+**429** | Too Many Requests |  -  |
+**500** | Server error. |  -  |
+**4XX** | Client Error - Bad request, unauthorized, forbidden, not found, or validation error |  -  |
+**5XX** | Server Error - Internal server error or service unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -338,12 +350,16 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successfully updated quote |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Quote not found |  -  |
-**422** | Unprocessable Entity |  -  |
-**500** | Internal Server Error |  -  |
+**400** | Bad request. Request message data did not pass validation. |  -  |
+**401** | Unauthorised. Not authorised to access requested data. |  -  |
+**403** | Forbidden. Access to requested data is forbidden. |  -  |
+**404** | Not Found. Requested resource does not exist. |  -  |
+**408** | Timeout. Operation timed out. |  -  |
+**422** | Unprocessable entity. Request message data did not pass validation. |  -  |
+**429** | Too Many Requests |  -  |
+**500** | Server error. |  -  |
+**4XX** | Client Error - Bad request, unauthorized, forbidden, not found, or validation error |  -  |
+**5XX** | Server Error - Internal server error or service unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
