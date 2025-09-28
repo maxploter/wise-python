@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**ActivityResourceType**](ActivityResourceType.md) |  | 
+**type** | **str** | Activity resource type enumeration. Common values include ACCRUAL_CHARGE, ACQUIRING_PAYMENT, ASSETS_WITHDRAWAL, BALANCE_CASHBACK, BALANCE_INTEREST, BALANCE_TRANSACTION, BANK_DETAILS_ORDER, BATCH_TRANSFER, CARD_CASHBACK, CARD_ORDER, CARD_TRANSACTION, DIRECT_DEBIT_INSTRUCTION, DIRECT_DEBIT_TRANSACTION, FEE_REFUND, INCIDENT_REFUND, INCORPORATION_ORDER, OPERATIONAL_TRANSACTION, PAYMENT_REQUEST, REWARD, REWARDS_REDEMPTION, SEND_ORDER, SEND_ORDER_EXECUTION, TRANSFER. This list may be extended by the API provider. | 
 **id** | **str** | Resource identifier | 
 
 ## Example

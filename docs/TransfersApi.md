@@ -93,6 +93,16 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Transfer requirements |  -  |
+**400** | Bad request. Request message data did not pass validation. |  -  |
+**401** | Unauthorised. Not authorised to access requested data. |  -  |
+**403** | Forbidden. Access to requested data is forbidden. |  -  |
+**404** | Not Found. Requested resource does not exist. |  -  |
+**408** | Timeout. Operation timed out. |  -  |
+**422** | Unprocessable entity. Request message data did not pass validation. |  -  |
+**429** | Too Many Requests |  -  |
+**500** | Server error. |  -  |
+**4XX** | Client Error - Bad request, unauthorized, forbidden, not found, or validation error |  -  |
+**5XX** | Server Error - Internal server error or service unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -169,6 +179,16 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Transfer cancelled |  -  |
+**400** | Bad request. Request message data did not pass validation. |  -  |
+**401** | Unauthorised. Not authorised to access requested data. |  -  |
+**403** | Forbidden. Access to requested data is forbidden. |  -  |
+**404** | Not Found. Requested resource does not exist. |  -  |
+**408** | Timeout. Operation timed out. |  -  |
+**422** | Unprocessable entity. Request message data did not pass validation. |  -  |
+**429** | Too Many Requests |  -  |
+**500** | Server error. |  -  |
+**4XX** | Client Error - Bad request, unauthorized, forbidden, not found, or validation error |  -  |
+**5XX** | Server Error - Internal server error or service unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -248,6 +268,16 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | Transfer created |  -  |
+**400** | Bad request. Request message data did not pass validation. |  -  |
+**401** | Unauthorised. Not authorised to access requested data. |  -  |
+**403** | Forbidden. Access to requested data is forbidden. |  -  |
+**404** | Not Found. Requested resource does not exist. |  -  |
+**408** | Timeout. Operation timed out. |  -  |
+**422** | Unprocessable entity. Request message data did not pass validation. |  -  |
+**429** | Too Many Requests |  -  |
+**500** | Server error. |  -  |
+**4XX** | Client Error - Bad request, unauthorized, forbidden, not found, or validation error |  -  |
+**5XX** | Server Error - Internal server error or service unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -327,6 +357,16 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | Transfer created |  -  |
+**400** | Bad request. Request message data did not pass validation. |  -  |
+**401** | Unauthorised. Not authorised to access requested data. |  -  |
+**403** | Forbidden. Access to requested data is forbidden. |  -  |
+**404** | Not Found. Requested resource does not exist. |  -  |
+**408** | Timeout. Operation timed out. |  -  |
+**422** | Unprocessable entity. Request message data did not pass validation. |  -  |
+**429** | Too Many Requests |  -  |
+**500** | Server error. |  -  |
+**4XX** | Client Error - Bad request, unauthorized, forbidden, not found, or validation error |  -  |
+**5XX** | Server Error - Internal server error or service unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -403,7 +443,17 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Transfer created |  -  |
+**200** | Transfer created |  -  |
+**400** | Bad request. Request message data did not pass validation. |  -  |
+**401** | Unauthorised. Not authorised to access requested data. |  -  |
+**403** | Forbidden. Access to requested data is forbidden. |  -  |
+**404** | Not Found. Requested resource does not exist. |  -  |
+**408** | Timeout. Operation timed out. |  -  |
+**422** | Unprocessable entity. Request message data did not pass validation. |  -  |
+**429** | Too Many Requests |  -  |
+**500** | Server error. |  -  |
+**4XX** | Client Error - Bad request, unauthorized, forbidden, not found, or validation error |  -  |
+**5XX** | Server Error - Internal server error or service unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -485,6 +535,16 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Payment processed |  -  |
+**400** | Bad request. Request message data did not pass validation. |  -  |
+**401** | Unauthorised. Not authorised to access requested data. |  -  |
+**403** | Forbidden. Access to requested data is forbidden. |  -  |
+**404** | Not Found. Requested resource does not exist. |  -  |
+**408** | Timeout. Operation timed out. |  -  |
+**422** | Unprocessable entity. Request message data did not pass validation. |  -  |
+**429** | Too Many Requests |  -  |
+**500** | Server error. |  -  |
+**4XX** | Client Error - Bad request, unauthorized, forbidden, not found, or validation error |  -  |
+**5XX** | Server Error - Internal server error or service unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -561,6 +621,16 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Banking partner invoice details |  -  |
+**400** | Bad request. Request message data did not pass validation. |  -  |
+**401** | Unauthorised. Not authorised to access requested data. |  -  |
+**403** | Forbidden. Access to requested data is forbidden. |  -  |
+**404** | Not Found. Requested resource does not exist. |  -  |
+**408** | Timeout. Operation timed out. |  -  |
+**422** | Unprocessable entity. Request message data did not pass validation. |  -  |
+**429** | Too Many Requests |  -  |
+**500** | Server error. |  -  |
+**4XX** | Client Error - Bad request, unauthorized, forbidden, not found, or validation error |  -  |
+**5XX** | Server Error - Internal server error or service unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -629,13 +699,23 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/pdf
+ - **Accept**: application/pdf, application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | NOC PDF document |  -  |
+**400** | Bad request. Request message data did not pass validation. |  -  |
+**401** | Unauthorised. Not authorised to access requested data. |  -  |
+**403** | Forbidden. Access to requested data is forbidden. |  -  |
+**404** | Not Found. Requested resource does not exist. |  -  |
+**408** | Timeout. Operation timed out. |  -  |
+**422** | Unprocessable entity. Request message data did not pass validation. |  -  |
+**429** | Too Many Requests |  -  |
+**500** | Server error. |  -  |
+**4XX** | Client Error - Bad request, unauthorized, forbidden, not found, or validation error |  -  |
+**5XX** | Server Error - Internal server error or service unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -714,6 +794,16 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Transfer details |  -  |
+**400** | Bad request. Request message data did not pass validation. |  -  |
+**401** | Unauthorised. Not authorised to access requested data. |  -  |
+**403** | Forbidden. Access to requested data is forbidden. |  -  |
+**404** | Not Found. Requested resource does not exist. |  -  |
+**408** | Timeout. Operation timed out. |  -  |
+**422** | Unprocessable entity. Request message data did not pass validation. |  -  |
+**429** | Too Many Requests |  -  |
+**500** | Server error. |  -  |
+**4XX** | Client Error - Bad request, unauthorized, forbidden, not found, or validation error |  -  |
+**5XX** | Server Error - Internal server error or service unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -790,6 +880,16 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Transfer details |  -  |
+**400** | Bad request. Request message data did not pass validation. |  -  |
+**401** | Unauthorised. Not authorised to access requested data. |  -  |
+**403** | Forbidden. Access to requested data is forbidden. |  -  |
+**404** | Not Found. Requested resource does not exist. |  -  |
+**408** | Timeout. Operation timed out. |  -  |
+**422** | Unprocessable entity. Request message data did not pass validation. |  -  |
+**429** | Too Many Requests |  -  |
+**500** | Server error. |  -  |
+**4XX** | Client Error - Bad request, unauthorized, forbidden, not found, or validation error |  -  |
+**5XX** | Server Error - Internal server error or service unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -858,13 +958,23 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/pdf
+ - **Accept**: application/pdf, application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | PDF receipt |  -  |
+**400** | Bad request. Request message data did not pass validation. |  -  |
+**401** | Unauthorised. Not authorised to access requested data. |  -  |
+**403** | Forbidden. Access to requested data is forbidden. |  -  |
+**404** | Not Found. Requested resource does not exist. |  -  |
+**408** | Timeout. Operation timed out. |  -  |
+**422** | Unprocessable entity. Request message data did not pass validation. |  -  |
+**429** | Too Many Requests |  -  |
+**500** | Server error. |  -  |
+**4XX** | Client Error - Bad request, unauthorized, forbidden, not found, or validation error |  -  |
+**5XX** | Server Error - Internal server error or service unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -941,6 +1051,16 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of payments |  -  |
+**400** | Bad request. Request message data did not pass validation. |  -  |
+**401** | Unauthorised. Not authorised to access requested data. |  -  |
+**403** | Forbidden. Access to requested data is forbidden. |  -  |
+**404** | Not Found. Requested resource does not exist. |  -  |
+**408** | Timeout. Operation timed out. |  -  |
+**422** | Unprocessable entity. Request message data did not pass validation. |  -  |
+**429** | Too Many Requests |  -  |
+**500** | Server error. |  -  |
+**4XX** | Client Error - Bad request, unauthorized, forbidden, not found, or validation error |  -  |
+**5XX** | Server Error - Internal server error or service unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

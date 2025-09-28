@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **text** | **str** |  | [optional] 
-**type** | **str** |  | [optional] 
+**type** | **str** | The type of notice. Common values include WARNING, INFO, and BLOCKED. | [optional] 
 
 ## Example
 

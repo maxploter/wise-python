@@ -21,8 +21,6 @@ Retrieve paginated list of activities for a user profile with filtering options
 ```python
 import wise_api_client
 from wise_api_client.models.activities_response import ActivitiesResponse
-from wise_api_client.models.activity_resource_type import ActivityResourceType
-from wise_api_client.models.activity_status import ActivityStatus
 from wise_api_client.rest import ApiException
 from pprint import pprint
 
@@ -47,8 +45,8 @@ with wise_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wise_api_client.ActivitiesApi(api_client)
     profile_id = 56 # int | 
-    monetary_resource_type = wise_api_client.ActivityResourceType() # ActivityResourceType | Filter by resource type (optional)
-    status = wise_api_client.ActivityStatus() # ActivityStatus | Filter by activity status (optional)
+    monetary_resource_type = 'monetary_resource_type_example' # str | Filter by resource type (optional)
+    status = 'status_example' # str | Filter by activity status (optional)
     since = '2013-10-20T19:20:30+01:00' # datetime | Filter activities created after this timestamp (optional)
     until = '2013-10-20T19:20:30+01:00' # datetime | Filter activities created before this timestamp (optional)
     next_cursor = 'next_cursor_example' # str | Pagination cursor for next page (optional)
@@ -71,8 +69,8 @@ with wise_api_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **profile_id** | **int**|  | 
- **monetary_resource_type** | [**ActivityResourceType**](.md)| Filter by resource type | [optional] 
- **status** | [**ActivityStatus**](.md)| Filter by activity status | [optional] 
+ **monetary_resource_type** | **str**| Filter by resource type | [optional] 
+ **status** | **str**| Filter by activity status | [optional] 
  **since** | **datetime**| Filter activities created after this timestamp | [optional] 
  **until** | **datetime**| Filter activities created before this timestamp | [optional] 
  **next_cursor** | **str**| Pagination cursor for next page | [optional] 
@@ -96,6 +94,16 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful response with activities |  -  |
+**400** | Bad request. Request message data did not pass validation. |  -  |
+**401** | Unauthorised. Not authorised to access requested data. |  -  |
+**403** | Forbidden. Access to requested data is forbidden. |  -  |
+**404** | Not Found. Requested resource does not exist. |  -  |
+**408** | Timeout. Operation timed out. |  -  |
+**422** | Unprocessable entity. Request message data did not pass validation. |  -  |
+**429** | Too Many Requests |  -  |
+**500** | Server error. |  -  |
+**4XX** | Client Error - Bad request, unauthorized, forbidden, not found, or validation error |  -  |
+**5XX** | Server Error - Internal server error or service unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

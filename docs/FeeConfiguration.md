@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
+**type** | **str** | The fee calculation method. OVERRIDE means the fee is a fixed amount regardless of the transfer amount. | 
 **variable** | **float** |  | 
 **fixed** | **float** |  | 
 

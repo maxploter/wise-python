@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **business_name** | **str** |  | 
 **registration_number** | **str** |  | 
-**company_type** | **str** |  | 
+**company_type** | **str** | The type of business entity. Common values include LIMITED and PARTNERSHIP. | 
 
 ## Example
 

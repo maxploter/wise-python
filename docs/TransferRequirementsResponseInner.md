@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | [optional] 
+**type** | **str** | Common values include transfer. This list may be extended by the API provider. | [optional] 
 **fields** | [**List[TransferRequirementsResponseInnerFieldsInner]**](TransferRequirementsResponseInnerFieldsInner.md) |  | [optional] 
 
 ## Example
