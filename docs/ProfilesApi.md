@@ -368,7 +368,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_verification_document**
-> Error create_verification_document(profile_id, create_verification_document_request=create_verification_document_request)
+> CreateVerificationDocumentResponse create_verification_document(profile_id, create_verification_document_request=create_verification_document_request)
 
 Create identification document
 
@@ -379,7 +379,7 @@ Create identification document
 ```python
 import wise_api_client
 from wise_api_client.models.create_verification_document_request import CreateVerificationDocumentRequest
-from wise_api_client.models.error import Error
+from wise_api_client.models.create_verification_document_response import CreateVerificationDocumentResponse
 from wise_api_client.rest import ApiException
 from pprint import pprint
 
@@ -427,7 +427,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Error**](Error.md)
+[**CreateVerificationDocumentResponse**](CreateVerificationDocumentResponse.md)
 
 ### Authorization
 

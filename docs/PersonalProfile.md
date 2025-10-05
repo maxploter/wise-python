@@ -5,9 +5,24 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** | A unique profile identifier | [optional] 
 **type** | **str** |  | [optional] 
-**details** | [**PersonalProfileDetails**](PersonalProfileDetails.md) |  | [optional] 
+**id** | **int** | A unique profile identifier | [optional] 
+**public_id** | **str** | Public identifier for the profile | [optional] 
+**user_id** | **int** | A unique user identifier | [optional] 
+**address** | [**Address**](Address.md) |  | [optional] 
+**email** | **str** |  | [optional] 
+**created_at** | **datetime** |  | [optional] 
+**updated_at** | **datetime** |  | [optional] 
+**avatar** | **str** |  | [optional] 
+**current_state** | **str** | The current state of the profile. Common values include VISIBLE, HIDDEN, SUSPENDED. | [optional] 
+**contact_details** | [**ProfileContactDetails**](ProfileContactDetails.md) |  | [optional] 
+**first_name** | **str** |  | [optional] 
+**last_name** | **str** |  | [optional] 
+**preferred_name** | **str** |  | [optional] 
+**date_of_birth** | **date** |  | [optional] 
+**phone_number** | **str** |  | [optional] 
+**secondary_addresses** | [**List[Address]**](Address.md) |  | [optional] 
+**full_name** | **str** |  | [optional] 
 
 ## Example
 

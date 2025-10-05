@@ -1,6 +1,6 @@
 {
   "packageName": "wise_api_client",
-  "packageVersion": "0.2.5",
+  "packageVersion": "0.3.0",
   "library": "urllib3",
   "useOneOfDiscriminatorLookup": true,
   "hideGenerationTimestamp": false
