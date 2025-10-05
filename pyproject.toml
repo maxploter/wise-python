@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "wise_api_client"
-version = "0.2.5"
+version = "0.3.0"
 description = "(TransferWise) Wise Platform API"
 authors = ["Max Ploter <maksim.ploter@gmail.com>"]
 license = "MIT"
