@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "wise_api_client"
-version = "0.2.4"
-description = "Wise Platform API"
+version = "0.2.5"
+description = "(TransferWise) Wise Platform API"
 authors = ["Max Ploter <maksim.ploter@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/maxploter/wise-python"
-keywords = ["OpenAPI", "OpenAPI-Generator", "Wise Platform API"]
+keywords = ["OpenAPI", "OpenAPI-Generator", "(TransferWise) Wise Platform API"]
 include = ["wise_api_client/py.typed"]
 
 [tool.poetry.dependencies]

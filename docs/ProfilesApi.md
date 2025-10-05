@@ -629,7 +629,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_profiles**
-> List[ListProfiles200ResponseInner] list_profiles()
+> List[GetProfileById200Response] list_profiles()
 
 List profiles for a user account
 
@@ -639,7 +639,7 @@ List profiles for a user account
 
 ```python
 import wise_api_client
-from wise_api_client.models.list_profiles200_response_inner import ListProfiles200ResponseInner
+from wise_api_client.models.get_profile_by_id200_response import GetProfileById200Response
 from wise_api_client.rest import ApiException
 from pprint import pprint
 
@@ -681,7 +681,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List[ListProfiles200ResponseInner]**](ListProfiles200ResponseInner.md)
+[**List[GetProfileById200Response]**](GetProfileById200Response.md)
 
 ### Authorization
 
