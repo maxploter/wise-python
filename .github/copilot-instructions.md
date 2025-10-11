@@ -10,7 +10,19 @@ This guide provides step-by-step instructions for updating the Wise API specific
 
 ## Update Process
 
-### Step 1: Download the Latest API Spec
+### Step 1: Create a New Branch
+
+Before making any changes, checkout to main and pull the latest changes, then create a new branch for the version bump:
+
+```bash
+git checkout main
+git pull
+git checkout -b bump-version-{version}
+```
+
+Replace `{version}` with the new version number (e.g., `bump-version-0.4.0`).
+
+### Step 2: Download the Latest API Spec
 
 Download the latest OpenAPI specification from the source repository:
 
@@ -18,13 +30,13 @@ Download the latest OpenAPI specification from the source repository:
 curl -o api/spec.yaml https://raw.githubusercontent.com/maxploter/wise-openapi/main/openapi/spec.yaml
 ```
 
-### Step 2: Update Package Version
+### Step 3: Update Package Version
 
 Update the version number in the file: **api/config.json** - Update `packageVersion` field
 
 Follow semantic versioning (e.g., 0.3.0 → 0.4.0 for minor changes, 0.3.0 → 0.3.1 for patches).
 
-### Step 3: Clean Old Generated Files
+### Step 4: Clean Old Generated Files
 
 Delete the following directories to ensure a clean regeneration:
 
@@ -32,7 +44,7 @@ Delete the following directories to ensure a clean regeneration:
 rm -rf docs test wise_api_client wise_api_client.egg-info dist
 ```
 
-### Step 4: Generate the API Client
+### Step 5: Generate the API Client
 
 Run the OpenAPI generator using Docker:
 
@@ -58,7 +70,7 @@ This will regenerate:
 - setup.py - Updated version
 - other related files
 
-### Step 5: Build the Distribution
+### Step 6: Build the Distribution
 
 Build the package distribution files:
 
@@ -68,7 +80,7 @@ python -m build
 
 This creates distribution files in the `dist/` directory.
 
-### Step 6: Publish to PyPI
+### Step 7: Publish to PyPI
 
 Upload the package to PyPI:
 
@@ -168,4 +180,3 @@ Manual Updates Required:
 - `pyproject.toml`
 - `setup.py`
 - `api/spec.yaml` (downloaded)
-

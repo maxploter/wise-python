@@ -401,7 +401,7 @@ configuration = wise_api_client.Configuration(
 with wise_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wise_api_client.RecipientsApi(api_client)
-    quote_id = 'quote_id_example' # str | The ID of the quote.
+    quote_id = 'quote_id_example' # str | 
     create_recipient_request = wise_api_client.CreateRecipientRequest() # CreateRecipientRequest | A partial or complete recipient object based on the requirements you have already received.
     originator_legal_entity_type = 'originator_legal_entity_type_example' # str | The legal entity type of the sender. Required for some routes when the sender is a third party. (optional)
     address_required = True # bool | Set to true to always include address fields in the response. (optional)
@@ -423,7 +423,7 @@ with wise_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **quote_id** | **str**| The ID of the quote. | 
+ **quote_id** | **str**|  | 
  **create_recipient_request** | [**CreateRecipientRequest**](CreateRecipientRequest.md)| A partial or complete recipient object based on the requirements you have already received. | 
  **originator_legal_entity_type** | **str**| The legal entity type of the sender. Required for some routes when the sender is a third party. | [optional] 
  **address_required** | **bool**| Set to true to always include address fields in the response. | [optional] 
@@ -461,9 +461,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_recipient_accounts**
-> PaginatedRecipients list_recipient_accounts(profile_id=profile_id, currency=currency, size=size, seek_position=seek_position)
+> PaginatedRecipients list_recipient_accounts(creator_id=creator_id, profile_id=profile_id, currency=currency, active=active, type=type, owned_by_customer=owned_by_customer, size=size, seek_position=seek_position, sort=sort)
 
 List recipient accounts
+
+Retrieve a paginated list of recipient accounts with optional filtering and sorting. All query parameters are optional.
 
 ### Example
 
@@ -495,14 +497,19 @@ configuration = wise_api_client.Configuration(
 with wise_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wise_api_client.RecipientsApi(api_client)
-    profile_id = 56 # int |  (optional)
-    currency = 'currency_example' # str |  (optional)
-    size = 20 # int |  (optional) (default to 20)
-    seek_position = 56 # int |  (optional)
+    creator_id = 56 # int | Creator of the account (optional)
+    profile_id = 56 # int | Filter by personal or business profile, returns only those owned by this profile. Defaults to the personal profile. (optional)
+    currency = 'currency_example' # str | Filter responses by currency, comma separated values are supported (e.g. USD,GBP) (optional)
+    active = True # bool | Filter by whether this profile is active. Defaults to true. (optional) (default to True)
+    type = 'type_example' # str | Filter responses by account type, comma separated values are supported (e.g. iban,swift_code) (optional)
+    owned_by_customer = True # bool | Filter to get accounts owned by the customer or not, leave out to get all accounts (optional)
+    size = 20 # int | Page size of the response. Defaults to a maximum of 20. (optional) (default to 20)
+    seek_position = 56 # int | Account ID to start the page of responses from in the response. null if no more pages. (optional)
+    sort = 'id,asc' # str | Sorting strategy for the response. Comma separated options: firstly either id or currency, followed by asc or desc for direction (e.g. id,asc or currency,desc) (optional)
 
     try:
         # List recipient accounts
-        api_response = api_instance.list_recipient_accounts(profile_id=profile_id, currency=currency, size=size, seek_position=seek_position)
+        api_response = api_instance.list_recipient_accounts(creator_id=creator_id, profile_id=profile_id, currency=currency, active=active, type=type, owned_by_customer=owned_by_customer, size=size, seek_position=seek_position, sort=sort)
         print("The response of RecipientsApi->list_recipient_accounts:\n")
         pprint(api_response)
     except Exception as e:
@@ -516,10 +523,15 @@ with wise_api_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **profile_id** | **int**|  | [optional] 
- **currency** | **str**|  | [optional] 
- **size** | **int**|  | [optional] [default to 20]
- **seek_position** | **int**|  | [optional] 
+ **creator_id** | **int**| Creator of the account | [optional] 
+ **profile_id** | **int**| Filter by personal or business profile, returns only those owned by this profile. Defaults to the personal profile. | [optional] 
+ **currency** | **str**| Filter responses by currency, comma separated values are supported (e.g. USD,GBP) | [optional] 
+ **active** | **bool**| Filter by whether this profile is active. Defaults to true. | [optional] [default to True]
+ **type** | **str**| Filter responses by account type, comma separated values are supported (e.g. iban,swift_code) | [optional] 
+ **owned_by_customer** | **bool**| Filter to get accounts owned by the customer or not, leave out to get all accounts | [optional] 
+ **size** | **int**| Page size of the response. Defaults to a maximum of 20. | [optional] [default to 20]
+ **seek_position** | **int**| Account ID to start the page of responses from in the response. null if no more pages. | [optional] 
+ **sort** | **str**| Sorting strategy for the response. Comma separated options: firstly either id or currency, followed by asc or desc for direction (e.g. id,asc or currency,desc) | [optional] 
 
 ### Return type
 

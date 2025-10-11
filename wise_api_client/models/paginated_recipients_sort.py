@@ -18,20 +18,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool
 from typing import Any, ClassVar, Dict, List, Optional
-from wise_api_client.models.account_requirements_inner_fields_inner import AccountRequirementsInnerFieldsInner
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AccountRequirementsInner(BaseModel):
+class PaginatedRecipientsSort(BaseModel):
     """
-    AccountRequirementsInner
+    Sort information for the results
     """ # noqa: E501
-    type: Optional[StrictStr] = None
-    title: Optional[StrictStr] = None
-    fields: Optional[List[AccountRequirementsInnerFieldsInner]] = None
-    __properties: ClassVar[List[str]] = ["type", "title", "fields"]
+    empty: Optional[StrictBool] = None
+    sorted: Optional[StrictBool] = None
+    unsorted: Optional[StrictBool] = None
+    __properties: ClassVar[List[str]] = ["empty", "sorted", "unsorted"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -51,7 +50,7 @@ class AccountRequirementsInner(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AccountRequirementsInner from a JSON string"""
+        """Create an instance of PaginatedRecipientsSort from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -72,18 +71,11 @@ class AccountRequirementsInner(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in fields (list)
-        _items = []
-        if self.fields:
-            for _item_fields in self.fields:
-                if _item_fields:
-                    _items.append(_item_fields.to_dict())
-            _dict['fields'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AccountRequirementsInner from a dict"""
+        """Create an instance of PaginatedRecipientsSort from a dict"""
         if obj is None:
             return None
 
@@ -91,9 +83,9 @@ class AccountRequirementsInner(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "title": obj.get("title"),
-            "fields": [AccountRequirementsInnerFieldsInner.from_dict(_item) for _item in obj["fields"]] if obj.get("fields") is not None else None
+            "empty": obj.get("empty"),
+            "sorted": obj.get("sorted"),
+            "unsorted": obj.get("unsorted")
         })
         return _obj
 

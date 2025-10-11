@@ -15,10 +15,10 @@
 
 import unittest
 
-from wise_api_client.models.profile_contact_details import ProfileContactDetails
+from wise_api_client.models.paginated_recipients_sort import PaginatedRecipientsSort
 
-class TestProfileContactDetails(unittest.TestCase):
-    """ProfileContactDetails unit test stubs"""
+class TestPaginatedRecipientsSort(unittest.TestCase):
+    """PaginatedRecipientsSort unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,26 +26,27 @@ class TestProfileContactDetails(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ProfileContactDetails:
-        """Test ProfileContactDetails
+    def make_instance(self, include_optional) -> PaginatedRecipientsSort:
+        """Test PaginatedRecipientsSort
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `ProfileContactDetails`
+        # uncomment below to create an instance of `PaginatedRecipientsSort`
         """
-        model = ProfileContactDetails()
+        model = PaginatedRecipientsSort()
         if include_optional:
-            return ProfileContactDetails(
-                email = 'contact@example.com',
-                phone_number = '+447700900123'
+            return PaginatedRecipientsSort(
+                empty = True,
+                sorted = True,
+                unsorted = True
             )
         else:
-            return ProfileContactDetails(
+            return PaginatedRecipientsSort(
         )
         """
 
-    def testProfileContactDetails(self):
-        """Test ProfileContactDetails"""
+    def testPaginatedRecipientsSort(self):
+        """Test PaginatedRecipientsSort"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
