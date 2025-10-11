@@ -1103,8 +1103,8 @@ with wise_api_client.ApiClient(configuration) as api_client:
     status = 'status_example' # str |  (optional)
     source_currency = 'source_currency_example' # str |  (optional)
     target_currency = 'target_currency_example' # str |  (optional)
-    created_date_start = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
-    created_date_end = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    created_date_start = '2013-10-20' # date |  (optional)
+    created_date_end = '2013-10-20' # date |  (optional)
     limit = 20 # int |  (optional) (default to 20)
     offset = 0 # int |  (optional) (default to 0)
 
@@ -1128,8 +1128,8 @@ Name | Type | Description  | Notes
  **status** | **str**|  | [optional] 
  **source_currency** | **str**|  | [optional] 
  **target_currency** | **str**|  | [optional] 
- **created_date_start** | **datetime**|  | [optional] 
- **created_date_end** | **datetime**|  | [optional] 
+ **created_date_start** | **date**|  | [optional] 
+ **created_date_end** | **date**|  | [optional] 
  **limit** | **int**|  | [optional] [default to 20]
  **offset** | **int**|  | [optional] [default to 0]
 
