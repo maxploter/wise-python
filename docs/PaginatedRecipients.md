@@ -6,7 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **content** | [**List[Recipient]**](Recipient.md) |  | [optional] 
-**size** | **int** |  | [optional] 
+**size** | **int** | Number of items in the current page | [optional] 
+**seek_position_for_next** | **int** | Position to use in the seekPosition parameter to get the next page of results | [optional] 
+**seek_position_for_current** | **int** | Position to use in the seekPosition parameter to get the current page again | [optional] 
+**sort** | [**PaginatedRecipientsSort**](PaginatedRecipientsSort.md) |  | [optional] 
 
 ## Example
 

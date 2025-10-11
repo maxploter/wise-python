@@ -9,10 +9,8 @@ Name | Type | Description | Notes
 **user** | **int** |  | 
 **target_account** | **int** |  | 
 **source_account** | **int** |  | [optional] 
-**quote** | **int** |  | [optional] 
-**quote_uuid** | **str** | A unique quote identifier in GUID format | 
+**quote** | **str** | quote ID | [optional] 
 **status** | **str** | The current status of the transfer. Common values include pending, processing, funded, cancelled, outgoing_payment_sent, funds_refunded. This list may be extended by the API provider. | 
-**reference** | **str** |  | [optional] 
 **rate** | **float** |  | 
 **created** | **datetime** |  | 
 **business** | **int** |  | [optional] 
@@ -23,9 +21,9 @@ Name | Type | Description | Notes
 **source_value** | **float** |  | 
 **target_currency** | **str** | ISO 4217 three-letter currency code | 
 **target_value** | **float** |  | 
-**customer_transaction_id** | **str** |  | [optional] 
+**original_transfer_id** | **str** | Unique identifier randomly generated per transfer request by the calling client | 
+**payin_session_id** | **str** | ID of the Payin Session generated for the transfer | [optional] 
 **originator** | [**Originator**](Originator.md) |  | 
-**original_transfer_id** | **str** |  | 
 
 ## Example
 

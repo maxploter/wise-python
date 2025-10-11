@@ -5,7 +5,7 @@ All URIs are relative to *https://api.sandbox.transferwise.tech*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**calculate_transfer_requirements**](TransfersApi.md#calculate_transfer_requirements) | **POST** /v1/transfer-requirements | Get transfer requirements
-[**cancel_transfer**](TransfersApi.md#cancel_transfer) | **PUT** /v1/transfers/{transferId} | Cancel transfer
+[**cancel_transfer**](TransfersApi.md#cancel_transfer) | **PUT** /v1/transfers/{transferId}/cancel | Cancel transfer
 [**create_partner_licence_transfer**](TransfersApi.md#create_partner_licence_transfer) | **POST** /v1/profiles/{profileId}/partner-licence-transfers | Create partner license
 [**create_third_party_transfer**](TransfersApi.md#create_third_party_transfer) | **POST** /v2/profiles/{profileId}/third-party-transfers | Create third-party transfer
 [**create_transfer**](TransfersApi.md#create_transfer) | **POST** /v1/transfers | Create a standard transfer
@@ -1151,6 +1151,16 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of transfers |  -  |
+**400** | Bad request. Request message data did not pass validation. |  -  |
+**401** | Unauthorised. Not authorised to access requested data. |  -  |
+**403** | Forbidden. Access to requested data is forbidden. |  -  |
+**404** | Not Found. Requested resource does not exist. |  -  |
+**408** | Timeout. Operation timed out. |  -  |
+**422** | Unprocessable entity. Request message data did not pass validation. |  -  |
+**429** | Too Many Requests |  -  |
+**500** | Server error. |  -  |
+**4XX** | Client Error - Bad request, unauthorized, forbidden, not found, or validation error |  -  |
+**5XX** | Server Error - Internal server error or service unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

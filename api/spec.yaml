@@ -1,7 +1,7 @@
 openapi: 3.1.1
 info:
   title: (TransferWise) Wise Platform API
-  version: 0.5.0
+  version: 0.5.5
   description: |
     Comprehensive API for (TransferWise) Wise platform services including:
     - Profile
@@ -713,10 +713,24 @@ components:
     UpdateQuoteRequest:
       type: object
       properties:
+        sourceCurrency:
+          $ref: '#/components/schemas/Currency'
+        targetCurrency:
+          $ref: '#/components/schemas/Currency'
         targetAccount:
-          type: integer
-          format: int64
-          minimum: 0
+          $ref: '#/components/schemas/RecipientId'
+        targetAmount:
+          type: number
+          nullable: true
+          format: double
+          description: "The amount in the target currency. Must be greater than 0."
+          exclusiveMinimum: 0
+        sourceAmount:
+          type: number
+          nullable: true
+          format: double
+          description: "The amount in the source currency. Must be greater than 0."
+          exclusiveMinimum: 0
         payOut:
           type: string
         paymentMetadata:
@@ -852,6 +866,25 @@ components:
         size:
           type: integer
           example: 1
+          description: Number of items in the current page
+        seekPositionForNext:
+          type: integer
+          nullable: true
+          description: Position to use in the seekPosition parameter to get the next page of results
+        seekPositionForCurrent:
+          type: integer
+          nullable: true
+          description: Position to use in the seekPosition parameter to get the current page again
+        sort:
+          type: object
+          description: Sort information for the results
+          properties:
+            empty:
+              type: boolean
+            sorted:
+              type: boolean
+            unsorted:
+              type: boolean
 
     AccountRequirements:
       type: array
@@ -912,14 +945,15 @@ components:
         quote:
           type: integer
           nullable: true
+          description: v1 quote ID (deprecated)
         quoteUuid:
-          $ref: '#/components/schemas/QuoteId'
+          anyOf:
+            - $ref: '#/components/schemas/QuoteId'
+            - type: 'null'
+          description: v2 quote ID
         status:
           type: string
           description: "The current status of the transfer. Common values include pending, processing, funded, cancelled, outgoing_payment_sent, funds_refunded. This list may be extended by the API provider."
-        reference:
-          type: string
-          deprecated: true
         rate:
           type: number
           format: float
@@ -951,11 +985,17 @@ components:
         customerTransactionId:
           type: string
           format: uuid
+          nullable: true
+          description: Unique identifier randomly generated per transfer request by the calling client
+        payinSessionId:
+          type: string
+          format: uuid
+          nullable: true
+          description: ID of the Payin Session generated for the transfer
       required:
         - id
         - user
         - targetAccount
-        - quoteUuid
         - status
         - rate
         - created
@@ -966,18 +1006,79 @@ components:
         - targetValue
 
     OriginatorTransfer:
-      allOf:
-        - $ref: '#/components/schemas/StandardTransfer'
-        - type: object
-          properties:
-            originator:
-              $ref: '#/components/schemas/Originator'
-            originalTransferId:
-              type: string
-              format: uuid
-          required:
-            - originator
-            - originalTransferId
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/TransferId'
+        user:
+          type: integer
+          example: 4342275
+        targetAccount:
+          type: integer
+          example: 8692237
+        sourceAccount:
+          type: integer
+          nullable: true
+        quote:
+          type: string
+          format: uuid
+          description: quote ID
+        status:
+          type: string
+          description: "The current status of the transfer. Common values include pending, processing, funded, cancelled, outgoing_payment_sent, funds_refunded. This list may be extended by the API provider."
+        rate:
+          type: number
+          format: float
+          example: 0.89
+        created:
+          type: string
+          format: date-time
+        business:
+          type: integer
+          nullable: true
+        transferRequest:
+          type: integer
+          nullable: true
+          deprecated: true
+        details:
+          $ref: '#/components/schemas/TransferDetails'
+        hasActiveIssues:
+          type: boolean
+        sourceCurrency:
+          $ref: '#/components/schemas/Currency'
+        sourceValue:
+          type: number
+          format: float
+        targetCurrency:
+          $ref: '#/components/schemas/Currency'
+        targetValue:
+          type: number
+          format: float
+        originalTransferId:
+          type: string
+          format: uuid
+          description: Unique identifier randomly generated per transfer request by the calling client
+        payinSessionId:
+          type: string
+          format: uuid
+          nullable: true
+          description: ID of the Payin Session generated for the transfer
+        originator:
+          $ref: '#/components/schemas/Originator'
+      required:
+        - id
+        - user
+        - targetAccount
+        - status
+        - rate
+        - created
+        - details
+        - sourceCurrency
+        - sourceValue
+        - targetCurrency
+        - targetValue
+        - originator
+        - originalTransferId
 
     Originator:
       type: object
@@ -2275,31 +2376,64 @@ paths:
       tags:
         - Recipients
       summary: List recipient accounts
+      description: "Retrieve a paginated list of recipient accounts with optional filtering and sorting. All query parameters are optional."
       operationId: listRecipientAccounts
       security:
         - BearerAuth: [ ]
       parameters:
+        - name: creatorId
+          in: query
+          description: Creator of the account
+          schema:
+            type: integer
         - name: profileId
           in: query
+          description: Filter by personal or business profile, returns only those owned by this profile. Defaults to the personal profile.
           schema:
             type: integer
         - name: currency
           in: query
+          description: Filter responses by currency, comma separated values are supported (e.g. USD,GBP)
           schema:
             type: string
             pattern: '^[A-Z]{3}$'
             minLength: 3
             maxLength: 3
+        - name: active
+          in: query
+          description: Filter by whether this profile is active. Defaults to true.
+          schema:
+            type: boolean
+            default: true
+        - name: type
+          in: query
+          description: Filter responses by account type, comma separated values are supported (e.g. iban,swift_code)
+          schema:
+            type: string
+        - name: ownedByCustomer
+          in: query
+          description: Filter to get accounts owned by the customer or not, leave out to get all accounts
+          schema:
+            type: boolean
         - name: size
           in: query
+          description: Page size of the response. Defaults to a maximum of 20.
           schema:
             type: integer
             default: 20
-            format: int8
+            maximum: 40
         - name: seekPosition
           in: query
+          description: Account ID to start the page of responses from in the response. null if no more pages.
           schema:
             type: integer
+            nullable: true
+        - name: sort
+          in: query
+          description: "Sorting strategy for the response. Comma separated options: firstly either id or currency, followed by asc or desc for direction (e.g. id,asc or currency,desc)"
+          schema:
+            type: string
+            example: "id,asc"
       responses:
         '200':
           description: List of recipient accounts
@@ -2465,13 +2599,7 @@ paths:
       security:
         - BearerAuth: [ ]
       parameters:
-        - name: quoteId
-          in: path
-          required: true
-          schema:
-            type: string
-            format: uuid
-          description: "The ID of the quote."
+        - $ref: '#/components/parameters/quoteId'
         - name: originatorLegalEntityType
           in: query
           schema:
@@ -2592,6 +2720,26 @@ paths:
                   oneOf:
                     - $ref: '#/components/schemas/StandardTransfer'
                     - $ref: '#/components/schemas/OriginatorTransfer'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '408':
+          $ref: '#/components/responses/Timeout'
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '4XX':
+          $ref: '#/components/responses/ClientError'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '5XX':
+          $ref: '#/components/responses/InternalServerError'
       security:
         - BearerAuth: [ ]
 
@@ -2634,7 +2782,7 @@ paths:
           $ref: '#/components/responses/InternalServerError'
       security:
         - BearerAuth: [ ]
-
+  /v1/transfers/{transferId}/cancel:
     put:
       tags:
         - Transfers

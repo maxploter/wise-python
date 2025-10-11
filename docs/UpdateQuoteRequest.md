@@ -5,7 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**target_account** | **int** |  | [optional] 
+**source_currency** | **str** | ISO 4217 three-letter currency code | [optional] 
+**target_currency** | **str** | ISO 4217 three-letter currency code | [optional] 
+**target_account** | **int** | A unique recipient account identifier | [optional] 
+**target_amount** | **float** | The amount in the target currency. Must be greater than 0. | [optional] 
+**source_amount** | **float** | The amount in the source currency. Must be greater than 0. | [optional] 
 **pay_out** | **str** |  | [optional] 
 **payment_metadata** | [**PaymentMetadata**](PaymentMetadata.md) |  | [optional] 
 **pricing_configuration** | [**PricingConfiguration**](PricingConfiguration.md) |  | [optional] 
